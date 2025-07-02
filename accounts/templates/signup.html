@@ -1,7 +1,17 @@
-<h2>Sign Up</h2>
-<form method="POST" action="{% url 'signup' %}" id="signup-form" style="display: none;">
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Signup</h2>
+            <form method="POST" action="{% url 'signup' %}">
                 {% csrf_token %}
-                <h2>Signup Form</h2>
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="email" name="email" placeholder="Email Address" required>
                 <input type="password" name="password1" placeholder="Password" required>
@@ -9,4 +19,7 @@
                 <button type="submit" class="btn">Signup</button>
                 <p class="switch-text">Already a member? <a href="{% url 'login' %}">Login</a></p>
             </form>
-<a href="{% url 'login' %}">Already have an account? Login</a>
+        </div>
+    </div>
+</body>
+</html>
