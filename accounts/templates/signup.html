@@ -1,7 +1,12 @@
 <h2>Sign Up</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-</form>
+<form method="POST" action="{% url 'signup' %}" id="signup-form" style="display: none;">
+                {% csrf_token %}
+                <h2>Signup Form</h2>
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="password" name="password1" placeholder="Password" required>
+                <input type="password" name="password2" placeholder="Confirm Password" required>
+                <button type="submit" class="btn">Signup</button>
+                <p class="switch-text">Already a member? <a href="{% url 'login' %}">Login</a></p>
+            </form>
 <a href="{% url 'login' %}">Already have an account? Login</a>
