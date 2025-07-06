@@ -45,10 +45,11 @@
 <body>
     <div class="welcome-box">
         <h1>👋 Welcome, {{ request.user.username|title }}</h1>
-        <form method="POST" action="{% url 'logout' %}">
+        <!-- <form method="POST" action="{% url 'sakthi' %}">
             {% csrf_token %}
             <button type="submit" class="logout-btn">Logout</button>
-        </form>
+        </form> -->
+        <a href="{% url 'sakthi' %}" class="logout-btn"> log out</a>
     </div>
 </body>
 </html>
